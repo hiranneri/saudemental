@@ -1,9 +1,4 @@
 .vscode
-node_modules
-src\controllers\pessoaControllerv2.js
-src\modelsv2
-src\views\htmls
-src\views\ejs.txt
-src\views\perfilpacientev2.ejs
-conexao.js
 .gitignore
+node_modules
+conexao.js
