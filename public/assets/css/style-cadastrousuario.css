@@ -1,0 +1,25 @@
+.btnCadastroPaciente{
+  width: 25%;
+  height: 57%;
+  font-size: larger;
+  font-weight: bolder;
+  margin-left: 25%;
+}
+.btnCadastroPsicologo{
+  width: 25%;
+  height: 57%;
+  font-size: larger;
+  font-weight: bolder;
+}
+#containerForm{
+  margin-top: 3%;
+}
+#btnCadastrar{
+  height: 20%;
+  width: 50%;
+  font-size: larger;
+  font-weight: bold;
+}
+label{
+  font-weight: bold;
+}

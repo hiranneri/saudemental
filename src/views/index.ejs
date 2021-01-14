@@ -1,0 +1,16 @@
+<%- include('includes/head-login'); %>
+<%- include('includes/nav'); %>
+<img src="./saude.png" alt="Ícone Saúde Mental" class="icone-principal">
+<section class="container">
+
+  <form action="/" method="post">
+    <%- include("includes/messages"); %>
+    <input type="hidden" name="_csrf" value="">
+    <label>Acesse ou crie uma conta</label>
+    <input type="email" name="email" placeholder="Digite o seu e-mail" id="email" required>
+    <small>Caso não tenha acesso, digite o seu email para criarmos uma nova conta</small>
+    <input type="submit" value="Próximo" onclick="return validarEmail()" class="btnEnviar" value="Enviar">
+  </form>
+</section>
+</body>
+<%- include('includes/footer-login'); %>

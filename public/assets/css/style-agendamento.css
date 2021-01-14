@@ -1,0 +1,37 @@
+.bg-light{
+    background-color: #dfeff7!important;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--primary-color);  
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    background-color: #eff3f5;
+  }
+  .perfil{
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 300px;
+    width: 300px;
+  }
+  img{
+    height: 400px;
+    width: 400px;
+  }
+  .nomepaciente{
+    font-weight: 1000;
+    color: #264248;
+  }
+  input{
+      background-color: #eff3f5;
+      border: 0;
+  }
+  #campoID{
+      display: none;
+  }
+  #especialidades{
+    font-weight: bold;
+  }

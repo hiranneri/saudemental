@@ -1,0 +1,62 @@
+<%- include('includes/headprincipal'); %>
+<%- include('includes/nav'); %>
+<div class="container">
+    <div class="row">
+      <div class="div col-lg-2"></div>
+      <div class="div col-lg-8 my-3">
+        <h1 class="text-center">Agendamentos</h1>
+        <p class="text-center lead">Confira os psicólogos que te enviaram um pedido de consulta</p>
+
+      </div>
+      <div class="div col-lg-2"></div>
+    </div>
+  </div>
+  <div class="container">
+      <div class="row">
+
+          <div class="col-sm">
+            <label id="paciente"> <%=paciente[0].id  %></label>
+              <form action="/confirmar/agendamento" method="POST" id="propostasPsicologos">
+
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>                      
+                      <th scope="col">Psicologo</td>
+                      <th scope="col">Dia</th>
+                      <th scope="col">Horário</td>
+                      <th scope="col">Status</td>
+                    </tr>
+                  </thead>
+                  <tbody id="horarios">   
+                      <% for(i=0;i<propostaspsicologos.length;i++) { %> 
+                        <% if (propostaspsicologos[i].confirmado==0) { %>          
+                        <tr name="agendamento[]" id="<%= i %>">
+                          <td name="idPsicologo"><a href="/perfil/psicologo/<%= propostaspsicologos[i].psicologo_id %>" > 
+                            <%=propostaspsicologos[i].nome  %> </a>
+                          </td>
+                          <td name="dia">  <%=propostaspsicologos[i].dia  %> </td>
+                          <td name="hora"><%=propostaspsicologos[i].hora  %></td>                                             
+                          <td>                           
+                          
+                            <input type="button" class="btn btn-success" onclick="confirmarReprovacaoAgendamento(<%= i %>)" value="Aprovar">
+                            
+                           
+                          </td>
+                          <td> <div id="campos">
+
+                          </div>  </td>
+                        </tr>
+                        <% } %>    
+                      <% } %>   
+                  </tbody>                    
+                </table>                  
+                 
+              </form>
+          </div>
+         
+      
+
+      </div>
+  </div>
+  <a href="/">Home</a>
+  <%- include('includes/footerprincipal'); %>

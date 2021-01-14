@@ -1,0 +1,55 @@
+<%- include('includes/head-psicologos'); %>
+<%- include('includes/nav'); %>
+<div class="wrapper">
+<div class="container">
+    <div class="row">
+      <div class="div col-lg-2"></div>
+      <div class="div col-lg-8 my-3">
+        <h1 class="text-center boasVindas">Psicólogos</h1>    
+        <p class="text-center lead boasVindas">Encontre o seu psicologo e marque uma sessão</p>
+      </div>
+      <div class="div col-lg-2"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <label for="nome">Filtre: </label> 
+        <input type="search" name="nome" class="nome-psicologo" id="nome">
+      </div>
+    </div>
+  </div>
+
+  <div class="container psicologos">
+   
+    <div class="row">
+      <% for(i=0;i<pessoas.psicologos.length;i++){ %>
+       
+        
+          
+        <div class="col-sm-3">
+          
+            <div class="card" style="width: 18rem;">
+              <a href="/perfil/psicologo/<%= pessoas.psicologos[i].id %>">
+                <img class="card-img-top" src="./psicologos.png" alt="<%= pessoas.psicologos[i].nome %>">              
+                <p class="card-text lista-psicologos">Psicólogo:  <%=  pessoas.psicologos[i].nome %></p> 
+              </a>
+              <div class="card-body">
+                <p id="especialidades">Especialidades: </p>
+                <% for(j=0;j<pessoas.especialidadesPsicologos.length;j++){ %>
+                  <% if( pessoas.psicologos[i].psicologo_id === pessoas.especialidadesPsicologos[j].psicologo_id) {  %>
+                    
+                    <%= pessoas.especialidadesPsicologos[j].nome %> 
+                  <% } %> 
+                <% } %> 
+            </div>               
+          
+            </div>
+            
+        </div>
+        
+        <% } %>
+        </div>
+    </div>
+    <%- include('includes/footer-psicologos'); %>

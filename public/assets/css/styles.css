@@ -1,0 +1,63 @@
+html{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Open sans', sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  background-color: #eff3f5;
+}
+.wrapper{
+  min-height: 100%;
+  position: relative;
+}
+
+.bg-light{
+  background-color: #dfeff7!important;
+}
+
+.icone-nav{
+  height: 3em;
+}
+.boasVindas{
+  font-family: Fira Sans,sans-serif;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Footer */
+footer{
+  bottom: 0;
+  left: 0;
+  background-color: #9ca6af2b;
+  width: 100%;
+  position: absolute;
+  margin-top: 2%;
+  height: 100px; 
+}
+.containerFooter{    
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: 5%;
+}
+
+.redes-sociais{
+ margin-top: 3%;
+ margin-left: 3%;
+}
+.avisoLegal{
+  margin-top: 3%;
+  font-size: 13px;
+}
+#imgGithub{
+  margin-left: 10%;
+}
+.pacientes{
+  padding-bottom: 150px;
+}

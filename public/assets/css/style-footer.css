@@ -1,0 +1,30 @@
+footer{
+   /* background-color: #9ca6af2b;*/
+   background-color: #dee6e8db;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+.containerFooter{    
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: 5%;
+}
+.desenvolvimento{
+   margin-top: 1%;
+   margin-left: 3%;
+}
+
+.redes-sociais{
+   margin-top: 3%;
+   margin-left: 3%;
+}
+.avisoLegal{
+    margin-top: 3%;
+    font-size: 13px;
+}
+#imgGithub{
+    margin-left: 10%;
+}

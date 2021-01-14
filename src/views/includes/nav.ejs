@@ -1,0 +1,23 @@
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">
+    <img src="../../saude.png" alt="Ícone Saúde Mental" class="icone-nav">
+  </a>
+ 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+    <% if(!usuario){ %>  
+      <li class="nav-item">
+        <a class="nav-link" href="/">Entrar</a>
+      </li>
+    <% }else{ %>  
+
+      <li class="nav-item">
+        <a class="nav-link" href="/login/sair">Sair</a>
+      </li>
+    </ul>
+    <% } %>
+  </div>
+
+
+</nav>

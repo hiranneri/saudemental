@@ -1,0 +1,70 @@
+<%- include('includes/head-paciente'); %>
+<%- include('includes/nav'); %>
+<div class="wrapper">
+<div class="container">
+    <div class="row">
+      <div class="div col-lg-2"></div>
+      <div class="div col-lg-8 my-3">
+        <h1 class="text-center boasVindas">Perfil Paciente</h1>
+        <%- include("includes/messages"); %>
+      </div>
+      <div class="div col-lg-2"></div>
+    </div>
+</div>
+  <div class="container">
+      <div class="row">
+          <div class="col-sm">
+              <div class="card paciente">
+                  <img class="card-img-top listapacientes" src="../../3.png" alt="Imagem de capa do card">
+                  <br>Dados: <br>
+                  Nome:  <%= pessoa.nome%>  <%= pessoa.sobrenome%><br><br>
+                  Cidade:  <%= pessoa.cidade %><br><br>
+                  Email:  <%= pessoa.email %><br><br>
+                  Motivo Terapia:<br>
+                 <%= pessoa.paciente_motivo %>
+                 
+              </div>
+             
+          </div>
+          <div class="col-sm">
+            <% if (!usuario[0].crp) { %>
+            <form action="/perfil" method="POST">
+
+
+              <input type="hidden" id="id" name="id" value="<%= pessoa.id%>">
+
+                <div class="form-group">
+                  
+                  <label for="objetivo">Nos diga, o por que você deseja iniciar a terapia:</label>                  
+                  <textarea class="form-control" id="objetivo" cols=60 id="objetivo" rows="10" name="objetivo" 
+                    maxlength="500" wrap="hard" placeholder="Não se preocupe, essa informação só ficará disponível para os psicólogos">
+                    <%= pessoa.paciente_motivo %>
+                  </textarea><br>
+                  <small class="alert alert-info info" role="alert"> Essa informação só ficará disponível para os psicólogos</small>
+                 
+                </div><br>         
+              
+              <input type="submit" value="Salvar" class="btn btn-success" id="btnCadastrar">
+            </form>
+            <% } %>
+            <% if (usuario[0].crp) { %>
+              <form action="" method="post">
+                <div class="form-group">
+                  <label for="Convite">Envie o seu convite para marcar a sessão:</label>
+                  <textarea name="convite" id="" cols="30" rows="10">
+                    Prezado(a) <%= pessoa.nome%>,
+                    Eu, <%= usuario[0].nome %> -  <%= usuario[0].crp %> , me interessei pelo o seu perfil e gostaria de marcar uma sessão para te conhecer melhor 
+                    e combinarmos novas sessões de terapia.
+                    Grato(a).                  
+                  </textarea>
+                </div>
+                <div class="form-group">
+                  <input type="submit" value="Enviar" class="btn btn-success btnEnviar">
+                </div>
+              </form>
+            <% } %>
+        </div>
+          </div>
+      </div>
+  
+  <%- include('includes/footer'); %>

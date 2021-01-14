@@ -1,0 +1,19 @@
+.bg-light{
+    background-color: #dfeff7!important;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--primary-color);  
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    background-color: #eff3f5;
+  }
+#btnSalvar{
+  height: 100px;
+  width: 176px;
+  font-size: larger;
+  font-weight: bold;
+}

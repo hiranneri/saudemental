@@ -1,0 +1,85 @@
+<%- include('includes/head-paciente'); %>
+<%- include('includes/nav'); %>
+<div class="wrapper">
+<div class="container">
+    <div class="row">
+      <div class="div col-lg-2"></div>
+      <div class="div col-lg-8 my-3">
+        <h1 class="text-center">Disponibilidade do Paciente</h1>
+        <h2> 
+          <% if(!isAgendamentoConcluido) {  %>      
+            <p class="text-center lead">Escolha um horário para agendar com o(a) <span class="nomepaciente">  <%= pessoa.nome%></span></p>
+            <% } else {%>
+              <p class="text-center lead">Horários agendados com o(a) <span class="nomepaciente">  <%= pessoa.nome%></span></p>
+            <% } %>
+        </h2>
+      </div>
+      <div class="div col-lg-2"></div>
+    </div>
+  </div>
+  <div class="container pacientes">
+      <div class="row">
+          <div class="col-sm">
+              <div class="card" style="width: 18rem;">
+                  <img class="card-img-top listapacientes" src="../3.png" alt="Imagem de capa do card">
+                  <br>Dados: <br>
+                  Nome:  <%= pessoa.nome%>  <%= pessoa.sobrenome%><br><br>
+                  Data de Nascimento:  <%= pessoa.datanascimento %><br><br>
+                  Local:  <%= pessoa.cidade %><br><br>
+                  Email:  <%= pessoa.email %><br><br>
+                  Motivo Terapia:<br><br>
+                  <div class="card-body">
+                    <p class="card-text"><%= pessoa.paciente_motivo %></p>
+                  </div>
+              </div>
+             
+          </div>
+          <div class="col-sm">
+            <form action="/agendamento/paciente" method="POST">
+             
+              <input type="hidden" id="idUsuario" name="idPsicologo" value="<%= usuario[0].id%>">
+              <input type="hidden" id="idPaciente" name="idPaciente" value="<%= pessoa.perfil[0].id%>">
+              <div id="horarios">
+
+              </div> 
+              <%- include("includes/messages"); %>
+             
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <% if(!isAgendamentoConcluido) {  %>                      
+                      <th scope="col">#</td>
+                    <% } %>
+                    <th scope="col">Dia</td>
+                    <th scope="col">Horário</td>
+                  </tr>
+                </thead>
+                <tbody id="horarios">   
+                  <% if(pessoa.paciente_motivo!=null) {  %>
+                 
+                    <% for(i=0;i<horariosPaciente.length;i++){ %>                
+                      <tr name="horario">
+                        <% if(!isAgendamentoConcluido) {  %>
+                          <td>  <input type="checkbox" class="horario" name="agenda" value="<%= horariosPaciente[i].id %>">   </td>
+                        <% } %>
+                        <td name="dia"><%= horariosPaciente[i].dia %><%horariosPaciente[i].id %></td>
+                        <td name="hora"><%= horariosPaciente[i].hora %></td>
+                       
+                      </tr>                    
+                    <% } %>
+                    
+                  <% } %>  
+                  
+                </tbody>                    
+              </table>
+              
+              <% if(!isAgendamentoConcluido) {  %>
+                <button type="submit">Agendar</button>
+              <% } %>
+            
+            </form>
+        </div>
+          </div>
+      </div>
+  </div>
+  <%- include('includes/footer-pacientes'); %>

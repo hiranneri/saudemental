@@ -1,0 +1,66 @@
+<%- include('includes/head-home'); %>
+<%- include('includes/nav'); %>
+<div class="container">
+    <div class="row">
+      <div class="div col-lg-2"></div>
+      <div class="div col-lg-8 my-3">
+        <h1 class="text-center boasVindas">Seja Bem Vindo, <%=usuario[0].nome%>  </h1>    
+        <p class="text-center lead boasVindas">Encontre o seu paciente e marque uma sessão</p>      
+
+      </div>
+      
+    </div>
+  </div>
+  <div id="menu">
+    <ul>
+      <li><a href="pacientes">Pacientes</a></li>
+      <li><a href="perfil/psicologo/<%=usuario[0].id%>">Perfil</a></li>
+    </ul>
+  </div>
+
+  <div class="container fundo">  
+    <% if (psicologo.length<1) { %>  
+      <small class="alert alert-info" role="alert"> Preencha as suas informações no perfil, para encontrar os pacientes</small>
+      <div class="row">
+      
+      <div class="col-md-6 perfil">
+        <div class="col-xs-12">
+          <a href="/perfil/psicologo/<%=usuario[0].id%>">
+            <img src="./perfil.png" alt="Perfil" class="btnHome">
+            <p class="link">Perfil</p>
+            
+          </a>   
+        </div>
+      </div>
+  
+      <% } %>
+  
+    <% if (psicologo.length>0) { %> 
+      <div class="row">   
+        <div class="col-md-6">
+          <div class="col-xs-12"> 
+            <a  href="/pacientes">
+              <img src="./paciente.png" alt="Ver Pacientes" class="btnHome">
+              <p class="link">Ver Pacientes</p>
+            </a>    
+          </div>
+        </div>
+        
+  
+        <div class="col-md-6 perfil">
+          <div class="col-xs-12">
+            <a href="/perfil/psicologo/<%=usuario[0].id%>">
+              <img src="./perfil.png" alt="Perfil" class="btnHome">
+              <p class="link">Perfil</p>
+            </a>   
+          </div>
+        </div>
+  
+      
+      
+      <% } %>
+      </div>
+    </div>
+   
+    
+    <%- include('includes/footer'); %>

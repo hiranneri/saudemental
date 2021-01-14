@@ -1,0 +1,51 @@
+<%- include('includes/head-pacientes'); %>
+<%- include('includes/nav'); %>
+<div class="wrapper">
+<div class="container">
+    <div class="row">
+      <div class="div col-lg-2"></div>
+      <div class="div col-lg-8 my-3">
+        <h1 class="text-center boasVindas">Pacientes</h1>
+        <p class="text-center lead boasVindas">Veja quais são os pacientes que gostariam do seu apoio</p>  
+      </div>
+      <div class="div col-lg-2"></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <label for="nome">Filtre: </label> 
+        <input type="search" name="nome" class="nome-paciente" id="nome">
+      </div>
+    </div>
+  </div>
+  
+  <div class="container pacientes"> 
+    
+    <div class="row"> 
+      
+      <% for(i=0;i<pacientes.infoPacientes.length;i++){ %>
+      <div class="col-sm-3">
+        
+        <div class="card" style="width: 18rem;">   
+          
+           <a href="/perfil/paciente/<%= pacientes.infoPacientes[i].id %>"> 
+             <img class="card-img-top listapacientes" src="./pacientes.png" alt="<%= pacientes.infoPacientes[i].nome %>">
+           </a>
+
+            <a href="/perfil/paciente/<%= pacientes.infoPacientes[i].id %>">
+              <p class="card-text link-nome">
+              <%= pacientes.infoPacientes[i].nome %> </p> 
+            </a>
+            <div class="card-body link">              
+              Motivo: <%= pacientes.infoPacientes[i].paciente_motivo %>
+            </div>   
+            
+          </div>
+            
+        </div>
+        <% } %>
+        </div>
+    </div>
+  
+<%- include('includes/footer-pacientes'); %>

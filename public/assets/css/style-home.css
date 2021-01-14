@@ -1,0 +1,76 @@
+.bg-light{
+    /* background-color: #dff7f0cf!important; */
+    background-color: black;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: black;
+    font-family: 'Open sans', sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+   background-color: black
+
+}
+.boasVindas{
+    font-family: Fira Sans,sans-serif;
+    font-weight: 700;
+    color: #222;
+}
+.icone-nav{
+    height: 3em;
+}
+.btnHome{
+    margin-top: 2%;
+    height: 200px;
+    width: 200px;
+    margin-left: 20%;
+}
+#conteudoHome{
+    margin-left: 25%;
+    margin-top: 2%;
+    
+}
+.link{
+    color: #4d5c65;
+    font-size: 17px;
+    margin-left: 20%;
+}
+#menu{
+    width: 20%;
+    float: left;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+   
+
+}
+ul li{
+    list-style-type: none;
+    margin: 0;
+    padding: 0px;
+    text-align: left;
+    
+}
+ul li a{
+    color: white;
+}
+#menu a:link{
+    background-color: #0b5d6d;
+    color: #666;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 8px;
+    display: block;
+    margin-bottom: 3%;
+    border-radius: 8%;
+    height: 73px;
+    text-align: center;
+    padding-top: 5%;
+}
+#menu a:hover{
+    background: #e5f0ff;
+    color: #039;
+}

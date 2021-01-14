@@ -1,0 +1,70 @@
+<%- include('includes/headprincipal'); %>
+<%- include('includes/nav'); %>
+<div class="container">
+    <div class="row">
+      <div class="div col-lg-2"></div>
+      <div class="div col-lg-8 my-3">
+        <h1 class="text-center">Agendamentos</h1>
+        <p class="text-center lead">Confira os dias e horários do paciente <%=paciente[0].nome  %>  </p>
+        <%- include("includes/messages"); %>
+
+      </div>
+      <div class="div col-lg-2"></div>
+    </div>
+  </div>
+  <div class="container">
+      <div class="row">
+
+          <div class="col-sm">
+            
+              <form action="/confirmar/agendamento" method="POST" id="propostasPaciente">
+
+              
+              
+                <table class="table">
+                  <thead class="thead-dark">
+                    <tr>
+                                            
+                      <th scope="col">Psicologo</td>
+                      <th scope="col">Dia</th>
+                      <th scope="col">Horário</td>
+                      <th scope="col">Escolha</td>
+                     
+                    </tr>
+                  </thead>
+                  <tbody id="horarios">   
+                    <% if (propostasPaciente.length<=0) { %>
+                      <p class="alert alert-info" role="alert">Paciente ainda não escolheu os dias e horários para consulta<br>
+                        Ou os horários disponíveis já foram preenchidos.
+                      </p>
+                    <% } %> 
+                      <% for(i=0;i<propostasPaciente.length;i++) { %> 
+                       
+                        <tr name="agendamento[]" id="<%= i %>">              
+                          <td>
+                          <a href="/perfil/psicologo/<%= propostasPaciente[i].psicologo_id %>"  > 
+                            <%=propostasPaciente[i].nome  %> </a>
+                          </td>
+                          <td> <input type="text" name="dia" id="dia" value="<%=propostasPaciente[i].dia  %>" readonly="readonly">  </td>
+                          <td> <input type="text" name="hora" id="hora" value="<%=propostasPaciente[i].hora  %>" readonly="readonly">   </td>
+                          <% if (propostasPaciente[i].confirmado==0) { %>
+                            <td> <input type="button" onclick="confirmarAgendamento(<%= i %>)" class="btn btn-success" value="Confirmar">   </td>                                             
+                          <% } else { %>
+                            <td> Agendado  </td>
+                          <% } %>
+
+                         
+                        </tr>
+                           
+                      <% } %>   
+                  </tbody>                    
+                </table>                  
+                 
+              </form>
+          </div>
+         
+      
+
+      </div>
+  </div>  
+  <%- include('includes/footerprincipal'); %>

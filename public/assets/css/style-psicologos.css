@@ -1,0 +1,13 @@
+.lista-psicologos{
+    color: rgb(43, 102, 92);
+    font-weight: bold;
+}
+#especialidades{
+    font-weight: bold;
+}
+.invisivel{
+    display: none;
+}
+.card{
+    margin-bottom: 150px;
+}

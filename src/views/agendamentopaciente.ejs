@@ -1,0 +1,55 @@
+<%- include('includes/headprincipal'); %>
+<%- include('includes/nav'); %>
+<div class="container">
+    <div class="row">
+      <div class="div col-lg-2"></div>
+      <div class="div col-lg-8 my-3">
+        <h1 class="text-center">Agendamentos</h1>
+        <p class="text-center lead">Confira os pacientes e horários agendados</p>
+
+      </div>
+      <div class="div col-lg-2"></div>
+    </div>
+  </div>
+  <div class="container">
+      <div class="row">
+
+          <div class="col-sm">
+              <form action="#" method="POST">   
+
+                  <table class="table">
+                    <thead class="thead-dark">
+                      <tr>                      
+                        <th scope="col">Dia</td>
+                        <th scope="col">Horário</td>
+                        <th scope="col">Paciente</td>
+                        <th scope="col">Status</td>
+                      </tr>
+                    </thead>
+                    <tbody id="horarios">   
+                        <% for(i=0;i<pacientesAgendados.length;i++) { %>           
+                          <tr>
+                            <td>  <%= pacientesAgendados[i].dia %> </td>
+                            <td>  <%= pacientesAgendados[i].hora %> </td>
+                            <td>  <%= pacientesAgendados[i].nome %> </td>
+                            
+                            <% if(pacientesAgendados[i].confirmado==0) { %>
+                            
+                              <td> Aguardando aprovação do paciente  </td> 
+                            <% } else { %>
+                                <td>Agendamento Aprovado pelo o paciente</td>
+                            <% } %>
+                          
+                                
+                            </tr>
+                        <% } %>   
+                    </tbody>                    
+                  </table>
+                 
+              </form>
+          </div>
+          
+      
+
+      </div>
+  </div>

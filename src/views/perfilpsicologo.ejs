@@ -1,0 +1,58 @@
+<%- include('includes/head-psicologo'); %>
+<%- include('includes/nav'); %>
+<div class="wrapper">
+<div class="container">
+    <div class="row">
+      <div class="div col-lg-2"></div>
+      <div class="div col-lg-8 my-3">
+        <h1 class="text-center boasVindas">Perfil Psicólogo</h1>
+        <%- include("includes/messages"); %>
+      </div>
+      <div class="div col-lg-2"></div>
+    </div>
+  </div>
+  <div class="container">
+      <div class="row">
+          <div class="col-sm">
+              <div class="card psicologo" style="width: 18rem;">
+                <img class="card-img-top listapacientes" src="../../3.png" alt="Imagem de capa do card">
+                <br>Dados: <br>
+                Nome: <%= psicologo[0].nome%>  <%= psicologo[0].sobrenome%><br>
+                Local: <%= psicologo[0].cidade%> <%=psicologo[0].uf%><br>
+               Especialidade(s):
+               <% for(j=0;j<especialidades.length;j++){ %>                       
+                  <%= especialidades[j].nome %> -
+               <% } %> 
+                                 
+              </div>
+             
+          </div>
+          <div class="col-sm">
+              <h2>Mais sobre:</h2>
+          <h3> As especialidades do psicólogo <%= psicologo[0].nome%> são: </h3>
+            
+            <% for(j=0;j<especialidades.length;j++){ %>                       
+              <%= especialidades[j].nome %> - 
+            <% } %>   
+            
+            <% if(usuarioLogado[0].crp!=null && usuarioLogado[0].crp!=''){ %>       
+            <form action="/perfil/psicologo" method="post" id="formCadastrar">
+              <fieldset>Informe as suas especialidades: </fieldset>
+              <input type="hidden" id="idPaciente" value="<%=psicologo[0].id %>"></input>
+              <label for="descricao">Descrição:</label>
+              <input type="text" name="descricao" id="descricao">
+              <input type="button" onclick="adicionarCampos()" value="+"></button>
+              <div id="novasEspecialidades">
+
+              </div>
+              <input type="button" onclick="cadastrarPerfilPsicologo()" value="Cadastrar" id="btnCadastrar" class="btn btn-success">
+            </form>
+            <% } %>  
+          </p>
+         
+          </div>
+      </div>
+  </div>
+         
+  <%- include('includes/footer-perfil'); %>
+  <%- include('includes/footer'); %>

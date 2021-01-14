@@ -1,0 +1,17 @@
+<%- include('includes/head-login'); %>
+<%- include('includes/nav'); %>
+    <section class="container">
+      <%- include("includes/messages"); %>     
+        <form action="/acessar" method="post">
+          <input type="hidden" name="_csrf" value="">
+          
+          <label name="email">Email: <%= email %> </label>
+          <input type="hidden" name="email" value="<%= email %>">
+          <label>Digite sua senha:</label>
+          <input type="password" name="senha" placeholder="Digite a sua senha" required>         
+          <button class="btnEnviar">Acessar</button>
+        </form>
+    </section>
+  </body>
+<%- include('includes/footer-login'); %>
+    

@@ -1,0 +1,14 @@
+.btnEnviar{
+    width: 80%;
+    height: 60px;
+    font-size: larger;
+    font-weight: bolder;
+    margin-top: 5%;
+}
+textarea{
+    height: 50%;
+    width: 97%;
+}
+.paciente{
+  margin-bottom: 150px;
+}

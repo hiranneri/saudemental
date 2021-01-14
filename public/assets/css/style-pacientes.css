@@ -1,0 +1,15 @@
+.invisivel{
+    display: none;
+}
+.link-nome{
+    color: black;
+    font-weight: bolder;
+    font-size: 27px;
+}
+.link{
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+
