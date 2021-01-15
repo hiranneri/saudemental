@@ -1,3 +1,7 @@
 .vscode
 node_modules
 conexao.js
+src/modelsv2
+src/views/ejs.txt
+src/views/htmls
+src/views/perfilpacientev2.ejs
